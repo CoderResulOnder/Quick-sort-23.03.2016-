@@ -2,6 +2,7 @@
 sayac=0
 def quickSort(alist):
    quickSortHelper(alist,0,len(alist)-1)
+   global sayac
    return sayac
 
 def quickSortHelper(alist,first,last):
@@ -25,10 +26,12 @@ def partition(alist,first,last):
 
        while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
            leftmark = leftmark + 1
+           global sayac
            sayac=sayac+1
 
        while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
            rightmark = rightmark -1
+           global sayac
            sayac=sayac+1
 
        if rightmark < leftmark:
